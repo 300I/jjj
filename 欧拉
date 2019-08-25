@@ -1,0 +1,28 @@
+#include<stdio.h>
+#incldue<iostream>
+using namespace std;
+//欧拉模板一
+int eler(int x)
+{
+  int i,ans=x,a=x;
+  for(int i=1;i*i<=a;++i)
+  {
+    if(a%i==0)
+    {
+      ans=ans-ans/i;
+      while(a%i==0)a=a/i;
+    }
+  }
+  if(a>1)
+  {
+    ans=ans-ans/a;
+  }
+  return ans;
+}
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  int n;
+  cin>>n;
+  cout<<eler(n);
+}
